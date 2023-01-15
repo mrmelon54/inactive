@@ -30,6 +30,7 @@ func NewTimer(d time.Duration) *Timer {
 				i.t.Reset(i.d)
 			case n := <-i.t.C:
 				i.C <- n
+				i.t.Reset(i.d)
 			}
 		}
 	}()

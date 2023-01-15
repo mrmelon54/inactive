@@ -30,9 +30,9 @@ func TestChannelPassThroughWithDelay(t *testing.T) {
 	<-ChannelPassThrough[int](time.Second*2, a, b)
 	n := time.Now().Sub(z)
 	if n < time.Second*3 {
-		t.Fatal("Inactive channel should finish after 2 seconds")
+		t.Fatal("Inactive channel should finish after 3 seconds")
 	}
 	if n > time.Second*4 {
-		t.Fatal("Inactive channel should finish within 3 seconds")
+		t.Fatal("Inactive channel should finish within 4 seconds")
 	}
 }
